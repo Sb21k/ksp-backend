@@ -12,5 +12,8 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth',authRoutes);
 
+const articleRoutes = require('./routes/articleRoutes');
+app.use('/api/articles', articleRoutes);
+
 app.get('/', (req, res) => res.send('backend started'));
 app.listen(port, () => console.log(`backend app listening on port ${port}!`));
