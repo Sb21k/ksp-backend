@@ -49,7 +49,7 @@ exports.updateArticle = async(req,res) =>{
         const auth_id = req.user.id;
         const {title, category,content,tags} = req.body;
 
-        const [result] = await db.query("update articles set title=?, content=?, tags = ?,category=? where auth_id=? and id =?",[title,content,tags,category,auth_id,articleId])
+        const [result] = await db.query("update articles set title=?, content=?, tags = ?,category=? where auth_id=? AND id =?",[title,content,tags,category,auth_id,articleId])
         if(result.affectedRows === 0) {
             return res.status(403).json({ error: 'Not authorized to edit this article or it does not exist' });
         }
@@ -57,6 +57,7 @@ exports.updateArticle = async(req,res) =>{
         res.json({ message: 'Article updated successfully' })
     }
     catch (error) {
+        // console.log(error)
         console.error(error);
         res.status(500).json({ error: 'Failed to update article' });
     }
@@ -68,7 +69,7 @@ exports.deleteArticle = async (req, res) => {
         const authorId = req.user.id;
 
         const [result] = await db.query(
-            'DELETE FROM Articles WHERE id = ? AND author_id = ?',
+            'DELETE FROM Articles WHERE id = ? AND auth_id = ?',
             [articleId, authorId]
         );
 
