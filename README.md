@@ -6,7 +6,7 @@ A full-stack, AI-enhanced technical article publishing platform. This project al
 **Author:** Satyavrat Bind (PG-DAC)
 
 ## 🎥 Project Demo
-* **Demo Video:** [Insert your Public Google Drive Link Here]
+* **Demo Video:** [https://drive.google.com/file/d/19o9GsiQB6wfj1u9JKhqflg5cd0XM0OVY/view?usp=sharing]
 *(The video demonstrates Signup/Login, Article Creation, AI Assist usage, Edit/Delete, and Search/Filters)*
 
 ## 🏗️ 1. Approach & Architecture
